@@ -19,10 +19,6 @@ class TaglibConan(ConanFile):
     def source(self):
         self.run("git clone https://github.com/taglib/taglib.git")
         self.run("cd taglib && git checkout v{}".format(self.version))
-#         tools.replace_in_file("hello/CMakeLists.txt", "project(taglib)",
-#                               '''project(taglib)
-# include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-# conan_basic_setup()''')
 
     def build(self):
         cmake = CMake(self)
